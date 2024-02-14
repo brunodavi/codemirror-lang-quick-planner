@@ -17,7 +17,7 @@ Event { Time ' ' Title }
   week { $[1-7] }
 
   Range { week '-' week }
-  Split { (week ','?) week? }
+  Split { week (',' week)* }
 
   twoDigits { @digit @digit? }
   hours { twoDigits 'h' }

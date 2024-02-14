@@ -6,6 +6,8 @@ export const quickPlannerLanguage = LRLanguage.define({
     parser: parser.configure({
         props: [
             styleTags({
+                CommandRange: t.operator,
+                CommandSplit: t.operator,
                 Range: t.keyword,
                 Split: t.keyword,
                 Time: t.operator,
