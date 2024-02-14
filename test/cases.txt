@@ -1,41 +1,30 @@
-# Booleans
+# Application
 
-#t
-#f
+17h Take the dog to the vet today
 
-==>
+> 2-6 1h
+9h My Routine
+10h Meditate
+10h30 Take a Shower
+12h30m Go to work
 
-Program(Boolean, Boolean)
+> 3,5 30m
+18h Take out the Trash
 
-# Identifiers
-
-one
-Two_Three
-
-==>
-
-Program(Identifier, Identifier)
-
-# Strings
-
-"hello"
-"one\"\\two"
+> 6 2h
+10h Dentist
 
 ==>
 
-Program(String, String)
-
-# Applications
-
-(begin
-  (when #t
-    (print (concat "hello" " " "world")))
-  (print "DONE"))
-
-==>
-
-Program(Application(
-  Identifier,
-  Application(Identifier, Boolean, Application(
-    Identifier, Application(Identifier, String, String, String)))
-  Application(Identifier, String)))
+Program(
+  Event(Time, Title),
+  CommandRange(Range, Time),
+  Event(Time, Title),
+  Event(Time, Title),
+  Event (Time, Title),
+  Event (Time, Title),
+  CommandSplit(Split, Time),
+  Event (Time, Title),
+  CommandSplit(Split, Time),
+  Event (Time, Title)
+)

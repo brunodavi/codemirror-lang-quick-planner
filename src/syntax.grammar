@@ -1,26 +1,32 @@
 @top Program { expression* }
 
-@skip { space | LineComment }
+@skip { breakline }
 
 expression {
-  Identifier |
-  String |
-  Boolean |
-  Application { "(" expression* ")" }
+  CommandRange |
+  CommandSplit |
+  Event
 }
 
+CommandRange { '> ' Range ' ' Time }
+CommandSplit { '> ' Split ' ' Time }
+
+Event { Time ' ' Title }
+
 @tokens {
-  Identifier { $[a-zA-Z_\-0-9]+ }
+  week { $[1-7] }
 
-  String { '"' (!["\\] | "\\" _)* '"' }
+  Range { week '-' week }
+  Split { (week ','?) week? }
 
-  Boolean { "#t" | "#f" }
+  twoDigits { @digit @digit? }
+  hours { twoDigits 'h' }
+  minutes { twoDigits 'm'  }
 
-  LineComment { ";" ![\n]* }
+  Time { hours | minutes | hours twoDigits 'm'? }
+  Title { ![\n]+ }
 
-  space { $[ \t\n\r]+ }
-
-  "(" ")"
+  breakline { '\n' }
 }
 
 @detectDelim

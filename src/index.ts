@@ -1,30 +1,20 @@
-import {parser} from "./syntax.grammar"
-import {LRLanguage, LanguageSupport, indentNodeProp, foldNodeProp, foldInside, delimitedIndent} from "@codemirror/language"
-import {styleTags, tags as t} from "@lezer/highlight"
+import { parser } from "./syntax.grammar";
+import { LRLanguage, LanguageSupport } from "@codemirror/language";
+import { styleTags, tags as t } from "@lezer/highlight";
 
-export const EXAMPLELanguage = LRLanguage.define({
-  parser: parser.configure({
-    props: [
-      indentNodeProp.add({
-        Application: delimitedIndent({closing: ")", align: false})
-      }),
-      foldNodeProp.add({
-        Application: foldInside
-      }),
-      styleTags({
-        Identifier: t.variableName,
-        Boolean: t.bool,
-        String: t.string,
-        LineComment: t.lineComment,
-        "( )": t.paren
-      })
-    ]
-  }),
-  languageData: {
-    commentTokens: {line: ";"}
-  }
-})
+export const quickPlannerLanguage = LRLanguage.define({
+    parser: parser.configure({
+        props: [
+            styleTags({
+                Range: t.keyword,
+                Split: t.keyword,
+                Time: t.operator,
+                Title: t.string,
+            }),
+        ],
+    }),
+});
 
-export function EXAMPLE() {
-  return new LanguageSupport(EXAMPLELanguage)
+export function quickPlanner() {
+    return new LanguageSupport(quickPlannerLanguage);
 }
