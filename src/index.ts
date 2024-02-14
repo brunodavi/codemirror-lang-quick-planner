@@ -10,7 +10,7 @@ export const quickPlannerLanguage = LRLanguage.define({
                 CommandSplit: t.operator,
                 Range: t.keyword,
                 Split: t.keyword,
-                Time: t.operator,
+                Time: t.name,
                 Title: t.string,
             }),
         ],
