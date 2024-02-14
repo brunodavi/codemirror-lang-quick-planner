@@ -2,7 +2,11 @@
   "name": "codemirror-lang-quick-planner",
   "version": "0.1.0",
   "description": "Quick planner language support for CodeMirror",
-  "author": "brunodavi",
+  "author": {
+    "name": "brunodavi",
+    "email": "brunodaviandrade2000+npm@gmail.com",
+    "url": "https://brunodavi.vercel.app" 
+  },
   "keywords": ["codemirror", "quick-planner", "lezer"],
   "license": "MIT",
   "repository": {
