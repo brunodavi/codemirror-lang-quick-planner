@@ -2,6 +2,13 @@
   "name": "codemirror-lang-quick-planner",
   "version": "0.1.0",
   "description": "Quick planner language support for CodeMirror",
+  "author": "brunodavi",
+  "keywords": ["codemirror", "quick-planner", "lezer"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunodavi/codemirror-lang-quick-planner"
+  },
   "scripts": {
     "test": "mocha test/test.js",
     "prepare": "rollup -c"
@@ -27,6 +34,5 @@
     "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-ts": "^3.0.2",
     "typescript": "^4.3.4"
-  },
-  "license": "MIT"
+  }
 }

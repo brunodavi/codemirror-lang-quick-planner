@@ -2,6 +2,16 @@
 
 This package implements a CodeMirror Lezer parser for the Quick Planner language, designed for quickly and easily writing routines.
 
+## API Reference
+
+<dl>
+  <dt> <code> quickPlanner(): LanguageSupport </code>
+  <dd> quick-planner support
+
+<dt> <code> quickPlannerLanguage: LezerLanguage </code>
+  <dd> Language provider for quick-planner
+</dl>
+
 ## Development
 
 1. Begin by installing dependencies with `npm install`.
